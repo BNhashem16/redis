@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\RedisController;
 use App\Jobs\TestJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
@@ -28,6 +29,8 @@ Route::get('/check-redis', function () {
 });
 
 Route::get('dispatch-job', function () {
-    dispatch(new TestJob());
-    return 'Job dispatched!';
+	dispatch(new TestJob());
+	return 'Job dispatched!';
 });
+Route::get('videos/{id}/get', [RedisController::class, 'get']);
+Route::get('videos/{id}/incr', [RedisController::class, 'incr']);

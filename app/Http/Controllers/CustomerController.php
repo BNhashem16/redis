@@ -96,7 +96,7 @@ class CustomerController extends Controller
             'id' => $customer->id,
             'name' => $customer->name,
         ];
-        
+        Redis::incr
         Redis::setex($cacheKey, 3600, json_encode($customerData));
         $executionTime = microtime(true) - $startTime;
         return response()->json([
