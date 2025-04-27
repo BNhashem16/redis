@@ -16,12 +16,11 @@ class SubscriptionExpiryNotification extends Command
 
     protected $description = 'Command description';
 
-    public function handle()
-    {
-		$customers = Customer::all();
-		foreach ($customers as $key => $customer) {
-			$expiryDate = $customer->subscription_end_date;
-			
-		}
-    }
+    // public function handle()
+    // {
+	// 	$customers = Customer::all();
+	// 	foreach ($customers as $key => $customer) {
+	// 		$expiryDate = $customer->subscription_end_date;
+	// 	}
+    // }
 }
