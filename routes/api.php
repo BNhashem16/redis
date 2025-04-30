@@ -34,3 +34,6 @@ Route::get('dispatch-job', function () {
 });
 Route::get('videos/{id}/get', [RedisController::class, 'get']);
 Route::get('videos/{id}/incr', [RedisController::class, 'incr']);
+Route::get('videos/{id}/decr', [RedisController::class, 'decr']);
+Route::get('log-activity-set', [RedisController::class, 'logActivitySet']);
+Route::get('log-activity-get', [RedisController::class, 'logActivityGet']);
